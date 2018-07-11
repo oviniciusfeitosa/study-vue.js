@@ -6,7 +6,7 @@
 
     <body>
         <div id="app">
-            <button v-on:click="clickedButtons($event)">
+            <button v-on:click="clickedButtons('Hello World', $event)">
                 Click here
             </button>
         </div>
@@ -14,9 +14,9 @@
             new Vue({
                 el: '#app',
                 methods: {
-                    clickedButtons: function (event) {
+                    clickedButtons: function (message, event) {
                         console.log(event)
-                        alert('Your clicked here!');
+                        alert(message);
                     }
                 }
             });
