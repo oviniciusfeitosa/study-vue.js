@@ -8,6 +8,10 @@
     <div id="app">
         <p>Title: {{movieTitle}} </p>
         <p>Released: {{releaseYear}} </p>
+        <p>This Movie is: {{ isMovieOld(releaseYear) ? 'Old' : 'New' }} </p>
+        <div v-bind:title="movieTitle">
+            Hover your mouse here!
+        </div>
     </div>
     <script>
         new Vue({
@@ -15,6 +19,11 @@
             data: {
                 movieTitle: "Matrix",
                 releaseYear: 1999
+            },
+            methods: {
+                isMovieOld: function (releaseYear) {
+                    return releaseYear < 2000 
+                }
             }
         });
     </script>
