@@ -6,7 +6,7 @@
 
 <body>
     <div id="app">
-        {{ getFullName() }}
+        {{ getFullName(firstName, lastName).name }}
     </div>
     <script>
         var app4 = new Vue({
@@ -16,8 +16,10 @@
                 lastName: 'Feitosa'
             },
             methods: {
-                getFullName: function () {
-                    return this.firstName + ' ' + this.lastName ;
+                getFullName: function (first, last) {
+                    return {
+                        name: first + ' ' + last
+                    }
                 }
             }
         })
