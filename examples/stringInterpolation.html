@@ -1,0 +1,23 @@
+<html>
+
+<head>
+    <script src="vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <p>Title: {{movieTitle}} </p>
+        <p>Released: {{releaseYear}} </p>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                movieTitle: "Matrix",
+                releaseYear: 1999
+            }
+        });
+    </script>
+</body>
+
+</html>
