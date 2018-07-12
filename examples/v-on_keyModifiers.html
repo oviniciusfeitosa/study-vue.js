@@ -1,0 +1,30 @@
+<html>
+
+    <head>
+        <script src="../vue.js"></script>
+    </head>
+
+    <body>
+        <div id="app">
+            <input type="text" v-on:keyup.enter="pressedEnter" /> Press Enter
+            <br />
+            <input type="text" v-on:keyup.enter.space="pressedSomethingInteresting" /> Press Enter or Space
+            <br />
+            <a href="https://vuejs.org/v2/guide/events.html#Key-Modifiers">List of key Modifiers</a>
+        </div>
+        <script>
+            new Vue({
+                el: '#app',
+                methods: {
+                    pressedEnter: function () {
+                        alert('You Pressed Enter key!');
+                    },
+                    pressedSomethingInteresting: function () {
+                        alert('You Pressed Enter or Space Interesting!');
+                    },
+                }
+            });
+        </script>
+    </body>
+
+</html>
