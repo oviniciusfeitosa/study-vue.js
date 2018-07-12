@@ -1,0 +1,32 @@
+<html>
+
+    <head>
+        <script src="../vue.js"></script>
+    </head>
+
+    <body>
+        <div id="app">
+            <input type="text" v-on:keyup.shift.enter="myListener" /> Press Shift + Enter
+            <br />
+            <button type="button" v-on:click.shift="myButtonListener"> Press me with Shift Pressed </button>
+            <br />
+            <button type="button" v-on:click.meta="myButtonListener"> Press me with Window key or Command Key(meta) Pressed </button>
+            <br />
+            <a href="https://vuejs.org/v2/guide/events.html#System-Modifier-Keys">List of Modifiers Keys</a>
+        </div>
+        <script>
+            new Vue({
+                el: '#app',
+                methods: {
+                    myListener: function () {
+                        alert('You have Pressed Shift+Enter key!');
+                    },
+                    myButtonListener: function () {
+                        alert('You clicked the button!')
+                    }
+                }
+            });
+        </script>
+    </body>
+
+</html>
