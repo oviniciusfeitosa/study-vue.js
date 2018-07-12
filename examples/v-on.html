@@ -1,0 +1,36 @@
+<html>
+
+    <head>
+        <script src="../vue.js"></script>
+    </head>
+
+    <body>
+        <div id="app">
+            <input type="text" v-on:keyup="nameKeyup"/>
+            Output: {{ name }}
+            <br />
+
+            <input type="text" v-on:keyup.ctrl.enter="name = $event.target.value"/>
+            Output: {{ name }}
+            <br />
+
+            <form action="" method="GET" v-on:submit.prevent>
+                <input type="submit" value="Submit" />
+            </form>
+        </div>
+        <script>
+            new Vue({
+                el: '#app',
+                data: {
+                    name: ''
+                },
+                methods: {
+                    nameKeyup: function (event) {
+                        this.name = event.target.value;
+                    }
+                }
+            });
+        </script>
+    </body>
+
+</html>
